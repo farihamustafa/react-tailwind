@@ -1,0 +1,72 @@
+import React, { useState } from 'react';
+
+function UserList() {
+  const [users, setUsers] = useState([
+    { id: 1, name: "John Doe", email: "john@example.com", position: "Developer", status: "Active" },
+    { id: 2, name: "Jane Smith", email: "jane@example.com", position: "Designer", status: "Inactive" },
+    { id: 3, name: "Alice Johnson", email: "alice@example.com", position: "Product Manager", status: "Active" },
+    { id: 4, name: "Bob Brown", email: "bob@example.com", position: "QA Engineer", status: "Active" },
+    { id: 5, name: "Charlie Davis", email: "charlie@example.com", position: "Support", status: "Inactive" },
+  ]);
+
+  
+
+  return (
+    
+    <div className="bg-gray-100 p-6 flex justify-center">
+      <div className="w-full max-w-4xl">
+      <div className="flex justify-between items-center mb-4">
+          <input
+            type="text"
+            placeholder="Search users..."
+            className="border border-gray-300 rounded-lg p-2 mr-4 w-1/3"
+          />
+          <div>
+            <button className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 mr-2">
+              Add User
+            </button>
+            <button className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-600">
+              Export User
+            </button>
+          </div>
+        </div>
+        <h1 className="text-2xl font-bold mb-4 text-center">User Management</h1>
+        <table className="min-w-full bg-white rounded-lg shadow-md mx-auto">
+          <thead>
+            <tr className="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
+              <th className="py-3 px-6 text-left">Name</th>
+              <th className="py-3 px-6 text-left">Email</th>
+              <th className="py-3 px-6 text-left">Position</th>
+              <th className="py-3 px-6 text-left">Status</th>
+              <th className="py-3 px-6 text-center">Action</th>
+            </tr>
+          </thead>
+          <tbody className="text-gray-600 text-sm font-light">
+            {users.map(user => (
+              <tr key={user.id} className="border-b border-gray-200 hover:bg-gray-100">
+                <td className="py-3 px-6 text-left">{user.name}</td>
+                <td className="py-3 px-6 text-left">{user.email}</td>
+                <td className="py-3 px-6 text-left">{user.position}</td>
+                <td className="py-3 px-6 text-left">{user.status}</td>
+                <td className="py-3 px-6 text-center">
+                  <button
+                    className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-600 mr-2"
+                  >
+                    Edit
+                  </button>
+                  <button
+                    className="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-600"
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+}
+
+export default UserList;

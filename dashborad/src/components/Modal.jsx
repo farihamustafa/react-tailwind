@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Modal = ({ isOpen, onClose, onSubmit, newUser, handleInputChange }) => {
+const Modal = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (

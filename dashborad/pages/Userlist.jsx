@@ -48,12 +48,14 @@ function UserList() {
   return (
     <div className="bg-gray-100 p-6 flex justify-center">
       <div className="w-full max-w-4xl">
-        <div className="flex justify-between items-center mb-4">
-          <input
-            type="text"
-            placeholder="Search users..."
-            className="border border-gray-300 rounded-lg p-2 mr-4 w-1/3"
-          />
+        <div className="flex justify-between items-center mb-4 ">
+        <input
+  type="text"
+  placeholder="Search users..."
+  className="border border-gray-300 rounded p-2 mr-4 w-1/2 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 transition"
+/>
+
+
           <div>
             <button
               className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 mr-2"
@@ -67,13 +69,11 @@ function UserList() {
           </div>
         </div>
 
-        {/* Add User Modal */}
+       
         <Modal
           isOpen={showForm}
           onClose={() => setShowForm(false)}
         />
-
-        {/* Edit User Modal */}
         {showEditForm && (
           <EditUser
             user={editUser}
@@ -96,7 +96,7 @@ function UserList() {
           </thead>
           <tbody className="text-gray-600 text-sm font-light">
             {users.map(user => (
-              <tr key={user.id} className="border-b border-gray-200 hover:bg-gray-100">
+              <tr key={user.id} className="border-b border-gray-200 hover:bg-gray-200">
                 <td className="py-3 px-6 text-left">{user.name}</td>
                 <td className="py-3 px-6 text-left">{user.email}</td>
                 <td className="py-3 px-6 text-left">{user.position}</td>
@@ -116,7 +116,7 @@ function UserList() {
             ))}
           </tbody>
         </table>
-        <div className="flex justify-end items-center mb-4 mt-4 mb-4"> {/* Updated justify-left to justify-start */}
+        <div className="flex justify-end items-center mb-4 mt-4 mb-4"> 
   <button
     className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-green-600 mr-2"
   >

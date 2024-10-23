@@ -98,7 +98,7 @@ const Modal = ({ isOpen, onClose }) => {
             <button
               type="button"
               onClick={onClose}
-              className="text-gray-500 hover:text-gray-700 font-medium"
+              className="text-gray-500 hover:text-gray-700font-medium"
             >
               Cancel
             </button>

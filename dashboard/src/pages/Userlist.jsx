@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Modal from '../src/components/Modal';
-import EditUser from '../src/components/edituser';
+import Modal from '../components/Modal';
+import EditUser from '../components/Edituser';
 
 function UserList() {
   const [users, setUsers] = useState([

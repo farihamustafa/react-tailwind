@@ -102,7 +102,6 @@ const EditUser = ({ user, onSave, onCancel, onChange }) => {
             </label>
           </div>
 
-          {/* New Password Field */}
           <div className="relative z-0 w-full mb-5 group">
             <input
               type="password"

@@ -118,7 +118,7 @@ function UserList() {
         </table>
         <div className="flex justify-end items-center mb-4 mt-4 mb-4"> 
   <button
-    className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-green-600 mr-2"
+    className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-600 mr-2"
   >
     Previous
   </button>

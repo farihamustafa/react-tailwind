@@ -15,60 +15,65 @@ function ChatBox() {
 
   return (
     <div className="grid grid-cols-[1fr_3fr_1fr] gap-4">
-      <ul className="max-w-xs divide-y divide-gray-200 dark:divide-gray-700"> 
-<form class="max-w-md mx-auto">   
-    <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
-    <div class="relative">
-        <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
-            </svg>
-        </div>
-        <input type="search" id="default-search" class="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search for a chat" required />
-        <button type="submit" class="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
+      <div className="max-w-xs">
+  <form className="max-w-md mx-auto">   
+    <label htmlFor="default-search" className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+    <div className="relative">
+      <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+        <svg className="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+          <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+        </svg>
+      </div>
+      <input type="search" id="default-search" className="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search for a chat" required />
+      <button type="submit" className="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
     </div>
-</form>
+  </form>
 
-        {[
-          { name: 'Neil Sims', message: 'Hey, how are you?', isOnline: true, imgSrc: 'https://img.freepik.com/free-photo/handsome-confident-smiling-man-with-hands-crossed-chest_176420-18743.jpg' },
-          { name: 'Bonnie Green', message: 'Let’s catch up later.', isOnline: false, imgSrc: '/docs/images/people/profile-picture-3.jpg' },
-          { name: 'Michael Gough', message: 'Are you coming to the event?', isOnline: true, imgSrc: '/docs/images/people/profile-picture-2.jpg' },
-          { name: 'Thomas Lean', message: 'I will call you tomorrow.', isOnline: false, imgSrc: '/docs/images/people/profile-picture-5.jpg' },
-          { name: 'Lana Byrd', message: 'Check your messages!', isOnline: true, imgSrc: '/docs/images/people/profile-picture-4.jpg' },
-          { name: 'Neil Sims', message: 'Hey, how are you?', isOnline: true, imgSrc: 'https://img.freepik.com/free-photo/handsome-confident-smiling-man-with-hands-crossed-chest_176420-18743.jpg' },
-          { name: 'Bonnie Green', message: 'Let’s catch up later.', isOnline: false, imgSrc: '/docs/images/people/profile-picture-3.jpg' },
-          { name: 'Michael Gough', message: 'Are you coming to the event?', isOnline: true, imgSrc: '/docs/images/people/profile-picture-2.jpg' },
-          { name: 'Thomas Lean', message: 'I will call you tomorrow.', isOnline: false, imgSrc: '/docs/images/people/profile-picture-5.jpg' },
-          { name: 'Lana Byrd', message: 'Check your messages!', isOnline: true, imgSrc: '/docs/images/people/profile-picture-4.jpg' },
-          { name: 'Neil Sims', message: 'Hey, how are you?', isOnline: true, imgSrc: 'https://img.freepik.com/free-photo/handsome-confident-smiling-man-with-hands-crossed-chest_176420-18743.jpg' },
-          { name: 'Bonnie Green', message: 'Let’s catch up later.', isOnline: false, imgSrc: '/docs/images/people/profile-picture-3.jpg' },
-          { name: 'Michael Gough', message: 'Are you coming to the event?', isOnline: true, imgSrc: '/docs/images/people/profile-picture-2.jpg' },
-          { name: 'Thomas Lean', message: 'I will call you tomorrow.', isOnline: false, imgSrc: '/docs/images/people/profile-picture-5.jpg' },
-          { name: 'Lana Byrd', message: 'Check your messages!', isOnline: true, imgSrc: '/docs/images/people/profile-picture-4.jpg' },
-        ].map((person, index) => (
-          <li key={index} className={`py-3 ${index === 0 ? 'pb-3 sm:pb-4' : 'sm:py-4'}`}>
-            <div className="flex items-center space-x-4 rtl:space-x-reverse">
-              <div className="flex-shrink-0">
-                <img className="w-8 h-8 rounded-full" src={person.imgSrc} alt={`${person.name} image`} />
-              </div>
-              <div className="flex-1 min-w-0">
-                <p className="text-sm font-medium text-gray-900 truncate dark:text-white text-left">
-                  {person.name}
-                </p>
-                <p className="text-sm text-gray-500 truncate dark:text-gray-400 text-left">
-                  {person.message}
-                </p>
-              </div>
-              <div className="flex items-center">
-                <span className={`h-3 w-3 rounded-full ${person.isOnline ? 'bg-blue-500' : 'bg-red-500'}`}></span>
-              </div>
-            </div>
-          </li>
-        ))}
-      </ul>
+  <ul className="max-h-96 overflow-y-auto divide-y divide-gray-200 dark:divide-gray-700 mt-4">
+    {[
+      { name: 'Neil Sims', message: 'Hey, how are you?', isOnline: true, imgSrc: 'https://img.freepik.com/free-photo/handsome-confident-smiling-man-with-hands-crossed-chest_176420-18743.jpg' },
+      { name: 'Bonnie Green', message: 'Let’s catch up later.', isOnline: false, imgSrc: '/docs/images/people/profile-picture-3.jpg' },
+      { name: 'Michael Gough', message: 'Are you coming to the event?', isOnline: true, imgSrc: '/docs/images/people/profile-picture-2.jpg' },
+      { name: 'Thomas Lean', message: 'I will call you tomorrow.', isOnline: false, imgSrc: '/docs/images/people/profile-picture-5.jpg' },
+      { name: 'Lana Byrd', message: 'Check your messages!', isOnline: true, imgSrc: '/docs/images/people/profile-picture-4.jpg' },
+      { name: 'Neil Sims', message: 'Hey, how are you?', isOnline: true, imgSrc: 'https://img.freepik.com/free-photo/handsome-confident-smiling-man-with-hands-crossed-chest_176420-18743.jpg' },
+      { name: 'Bonnie Green', message: 'Let’s catch up later.', isOnline: false, imgSrc: '/docs/images/people/profile-picture-3.jpg' },
+      { name: 'Michael Gough', message: 'Are you coming to the event?', isOnline: true, imgSrc: '/docs/images/people/profile-picture-2.jpg' },
+      { name: 'Thomas Lean', message: 'I will call you tomorrow.', isOnline: false, imgSrc: '/docs/images/people/profile-picture-5.jpg' },
+      { name: 'Lana Byrd', message: 'Check your messages!', isOnline: true, imgSrc: '/docs/images/people/profile-picture-4.jpg' },
+      { name: 'Neil Sims', message: 'Hey, how are you?', isOnline: true, imgSrc: 'https://img.freepik.com/free-photo/handsome-confident-smiling-man-with-hands-crossed-chest_176420-18743.jpg' },
+      { name: 'Bonnie Green', message: 'Let’s catch up later.', isOnline: false, imgSrc: '/docs/images/people/profile-picture-3.jpg' },
+      { name: 'Michael Gough', message: 'Are you coming to the event?', isOnline: true, imgSrc: '/docs/images/people/profile-picture-2.jpg' },
+      { name: 'Thomas Lean', message: 'I will call you tomorrow.', isOnline: false, imgSrc: '/docs/images/people/profile-picture-5.jpg' },
+      { name: 'Lana Byrd', message: 'Check your messages!', isOnline: true, imgSrc: '/docs/images/people/profile-picture-4.jpg' },
+    ].map((person, index) => (
+      <li key={index} className={`py-3 ${index === 0 ? 'pb-3 sm:pb-4' : 'sm:py-4'}`}>
+        <div className="flex items-center space-x-4 rtl:space-x-reverse">
+          <div className="flex-shrink-0">
+            <img className="w-8 h-8 rounded-full" src={person.imgSrc} alt={`${person.name} image`} />
+          </div>
+          <div className="flex-1 min-w-0">
+            <p className="text-sm font-medium text-gray-900 truncate dark:text-white text-left">
+              {person.name}
+            </p>
+            <p className="text-sm text-gray-500 truncate dark:text-gray-400 text-left">
+              {person.message}
+            </p>
+          </div>
+          <div className="flex items-center">
+            <p className='text-sm text-gray-500 truncate dark:text-gray-400 text-left px-4'>3h</p>
+            {/* //<span className={`h-3 w-3 rounded-full ${person.isOnline ? 'bg-blue-500' : 'bg-red-500'}`}></span> */}
+          </div>
+        </div>
+      </li>
+    ))}
+  </ul>
+</div>
 
       <div className="flex flex-col flex-1">
+        
         <div className="overflow-y-auto border border-gray-300 rounded-md h-96 p-4">
+        <div className='bg-blue-700 p-4 text-xl font-sans text-white rounded-xl'>Chat name</div>
           {messages.map((msg, index) => (
             <div key={index} className={`my-2 ${msg.isOutgoing ? 'text-right' : 'text-left'}`}>
               <span className={`inline-block p-2 rounded-lg ${msg.isOutgoing ? 'bg-blue-500 text-white' : 'bg-gray-300 text-gray-900'}`}>
@@ -136,7 +141,7 @@ Messages
         </svg>
     </div>
     <blockquote>
-        <p class="text-1xl font-semibold text-gray-900 dark:text-white">"Flowbite is just awesome. It contains tons of predesigned components and pages starting from login screen to complex dashboard. Perfect choice for your next SaaS application."</p>
+        <p class="text-1xl font-semibold text-gray-900 dark:text-white">"Flowbite is awesome. It contains tons of predesigned components and pages starting from login screen to complex dashboard. Perfect choice for your next SaaS application."</p>
     </blockquote>
     <figcaption class="flex items-center my-6 space-x-3 rtl:space-x-reverse">
         <img class="w-6 h-6 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png" alt="profile picture"/>

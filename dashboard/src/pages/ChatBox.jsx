@@ -62,7 +62,7 @@ function ChatBox() {
           </div>
           <div className="flex items-center">
             <p className='text-sm text-gray-500 truncate dark:text-gray-400 text-left px-4'>3h</p>
-            {/* //<span className={`h-3 w-3 rounded-full ${person.isOnline ? 'bg-blue-500' : 'bg-red-500'}`}></span> */}
+            {/* <span className={`h-3 w-3rounded-full ${person.isOnline ? 'bg-blue-500' : 'bg-red-500'}`}></span> */}
           </div>
         </div>
       </li>
